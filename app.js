@@ -936,81 +936,68 @@
     toast("词库已导出", "success");
   }
 
-  function parseDelimitedLine(line, delimiter) {
-    const cells = [];
-    let value = "";
-    let quoted = false;
-    for (let i = 0; i < line.length; i += 1) {
-      const char = line[i];
-      if (quoted) {
-        if (char === '"') {
-          if (line[i + 1] === '"') { value += '"'; i += 1; }
-          else quoted = false;
-        } else {
-          value += char;
-        }
-      } else if (char === '"' && value.trim() === "") {
-        quoted = true;
-      } else if (char === delimiter) {
-        cells.push(value);
-        value = "";
-      } else {
-        value += char;
-      }
-    }
-    cells.push(value);
-    return cells.map((cell) => cell.trim());
+  /* ---------- 导入预览 ---------- */
+
+  let importDraft = { source: "", items: [] };
+
+  const LEVEL_LABEL = { b2: "B2", easy: "入门", odd: "生僻", word: "单词", long: "整句", dup: "已收录" };
+
+  function existingPatternKeys() {
+    return new Set([...allCards, ...BASE_CARDS, ...state.customCards].map((card) => normalizePhrase(card.pattern)));
   }
 
-  function chooseDelimiter(lines) {
-    const scores = { "\t": 0, ",": 0, ";": 0, "|": 0 };
-    lines.forEach((line) => {
-      let quoted = false;
-      for (let i = 0; i < line.length; i += 1) {
-        const char = line[i];
-        if (char === '"') {
-          if (quoted && line[i + 1] === '"') { i += 1; continue; }
-          quoted = !quoted;
-        } else if (!quoted && Object.prototype.hasOwnProperty.call(scores, char)) {
-          scores[char] += 1;
-        }
-      }
+  function setImportStatus(message) {
+    const box = $("#importStatus");
+    if (!box) return;
+    box.textContent = message || "";
+    box.hidden = !message;
+  }
+
+  function prepareDraft(items, source) {
+    const known = existingPatternKeys();
+    const seen = new Set();
+    const merged = items.map((item) => {
+      const dup = item.dup === true || known.has(item.key) || seen.has(item.key);
+      seen.add(item.key);
+      return { ...item, dup, checked: item.level === "b2" && !dup };
     });
-    if (scores["\t"] > 0) return "\t";
-    let best = null;
-    [",", ";", "|"].forEach((delimiter) => {
-      if (!best || scores[delimiter] > scores[best]) best = delimiter;
-    });
-    return best && scores[best] > 0 ? best : null;
+    importDraft = { source, items: merged };
+    renderImportList();
+    $("#importDialog").showModal();
   }
 
-  function isVocabularyHeader(row) {
-    const clean = (value) => String(value || "").toLowerCase().replace(/\s+/g, "");
-    const first = clean(row[0]);
-    const second = clean(row[1]);
-    const firstNames = new Set(["西语搭配", "西语", "搭配", "短语", "词条", "pattern", "expresión", "expresion", "expression", "conector"]);
-    const secondNames = new Set(["中文", "中文意思", "中文释义", "意思", "释义", "翻译", "中文含义", "meaning"]);
-    return firstNames.has(first) || secondNames.has(second);
+  function draftVisible(item) {
+    if (item.dup && !$("#importShowDup").checked) return false;
+    if ($("#importOnlyB2").checked && item.level !== "b2") return false;
+    return true;
   }
 
-  function parseVocabularyText(text) {
-    const lines = text.replace(/^\uFEFF/, "").split(/\r?\n/)
-      .map((line) => line.replace(/\uFEFF/g, "").trim())
-      .filter((line) => line && !line.startsWith("#") && !line.startsWith("//"));
-    if (!lines.length) return [];
-    const delimiter = chooseDelimiter(lines);
-    if (!delimiter) return [];
-    const rows = lines
-      .filter((line) => line.includes(delimiter))
-      .map((line) => parseDelimitedLine(line, delimiter));
-    if (rows.length && isVocabularyHeader(rows[0])) rows.shift();
-    return rows.map((row) => ({
-      pattern: row[0] || "",
-      meaning: row[1] || "",
-      example: row[2] || "",
-      exampleZh: row[3] || "",
-      theme: row[4] || ""
-    }));
+  function updateImportFooter() {
+    const chosen = importDraft.items.filter((item) => item.checked && !item.dup).length;
+    const b2 = importDraft.items.filter((item) => item.level === "b2" && !item.dup).length;
+    const dup = importDraft.items.filter((item) => item.dup).length;
+    $("#importSummary").textContent = `${importDraft.source}：认出 ${importDraft.items.length} 条，常见 B2 词组 ${b2} 条，词库里已有 ${dup} 条，当前勾选 ${chosen} 条。`;
+    $("#importConfirm").textContent = `导入 ${chosen} 条`;
+    $("#importConfirm").disabled = chosen === 0;
+  }
+
+  function renderImportList() {
+    const rows = importDraft.items.filter(draftVisible);
+    const list = $("#importList");
+    list.innerHTML = rows.length
+      ? rows.map((item) => {
+          const index = importDraft.items.indexOf(item);
+          const tag = item.dup ? "dup" : item.level;
+          const tip = item.dup ? "词库里已经有这个搭配" : (item.why || "常见 B2 固定搭配");
+          return `<label class="import-row${item.checked ? "" : " is-off"}" data-index="${index}">
+            <input type="checkbox" ${item.checked ? "checked" : ""} aria-label="是否导入 ${escapeHtml(item.pattern)}">
+            <span class="ir-pattern">${escapeHtml(item.pattern)}</span>
+            <input class="ir-meaning" value="${escapeHtml(item.meaning)}" placeholder="补一个中文释义" aria-label="${escapeHtml(item.pattern)} 的释义">
+            <span class="ir-tag ${tag}" title="${escapeHtml(tip)}">${LEVEL_LABEL[tag] || tag}</span>
+          </label>`;
+        }).join("")
+      : '<p class="muted">这一批里没有符合条件的内容，换个筛选条件试试。</p>';
+    updateImportFooter();
   }
 
   function downloadVocabTemplate() {
@@ -1018,6 +1005,7 @@
       "# Ruta B2 词库导入模板",
       "# 每行：西语搭配 [Tab] 中文释义，可再填写 [Tab] 西语例句 [Tab] 例句翻译 [Tab] 主题",
       "# 以 # 或 // 开头的行会被忽略；重复搭配会自动跳过。",
+      "# 不按模板也行：直接粘贴乱排版笔记、表格整块复制的内容，或选择带高亮的 PDF。",
       "dar con la tecla\t找到窍门；摸清门路\tAl final di con la tecla para resolverlo.\t最后我找到了解决它的窍门。\t我的搭配",
       "ser pan comido\t小事一桩；轻而易举"
     ].join("\r\n");
@@ -1025,56 +1013,118 @@
     toast("TXT 模板已下载", "success");
   }
 
+  function addCustomCard(item) {
+    state.customCards.push({
+      id: newCardId(),
+      pattern: item.pattern,
+      meaning: item.meaning || "（待补充释义）",
+      example: String(item.example || "").trim(),
+      exampleZh: String(item.exampleZh || "").trim(),
+      theme: String(item.theme || "").trim() || DEFAULT_THEME,
+      createdAt: new Date().toISOString()
+    });
+  }
+
+  function refreshAfterImport(count) {
+    saveState();
+    buildCatalog();
+    renderThemeOptions();
+    renderLibrary();
+    renderDashboard();
+    toast(`导入完成：新增 ${count} 个搭配`, "success");
+  }
+
+  function importJsonVocabulary(text) {
+    const parsed = JSON.parse(text);
+    const list = Array.isArray(parsed) ? parsed : Array.isArray(parsed?.cards) ? parsed.cards : null;
+    if (!list) throw new Error("格式不正确");
+    const existing = existingPatternKeys();
+    let added = 0;
+    list.forEach((item) => {
+      if (!item || typeof item !== "object" || typeof item.pattern !== "string" || typeof item.meaning !== "string") return;
+      const pattern = item.pattern.trim().replace(/\s+/g, " ");
+      const meaning = item.meaning.trim();
+      if (!pattern || !meaning || existing.has(normalizePhrase(pattern))) return;
+      addCustomCard({ pattern, meaning, example: item.example, exampleZh: item.exampleZh, theme: item.theme });
+      existing.add(normalizePhrase(pattern));
+      added += 1;
+    });
+    if (!added) { toast("这个 JSON 里没有新搭配", "error"); return; }
+    refreshAfterImport(added);
+  }
+
+  const draftTheme = () => ($("#importTheme").value || "").trim();
+
+  function fromText(text, source) {
+    const items = window.RutaImport.parseText(text, draftTheme());
+    if (!items.length) {
+      setImportStatus(`${source}：没认出西语搭配。可以换一种格式，或直接把内容粘到上面的框里。`);
+      toast("没认出搭配内容", "error");
+      return;
+    }
+    setImportStatus("");
+    prepareDraft(items, source);
+  }
+
   async function importVocabulary(file) {
+    const name = file.name || "所选文件";
+    const isPdf = /\.pdf$/i.test(name) || file.type === "application/pdf";
     try {
-      const raw = (await file.text()).replace(/^\uFEFF/, "");
-      const trimmed = raw.trim();
-      let list = null;
-      if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
-        const parsed = JSON.parse(trimmed);
-        list = Array.isArray(parsed) ? parsed : Array.isArray(parsed?.cards) ? parsed.cards : null;
-        if (!list) throw new Error("格式不正确");
-      } else {
-        list = parseVocabularyText(raw);
-        if (!list.length) throw new Error("格式不正确");
-      }
-      const existing = new Set([...allCards, ...BASE_CARDS, ...state.customCards].map((card) => normalizePhrase(card.pattern)));
-      let added = 0;
-      let skipped = 0;
-      list.forEach((item) => {
-        if (!item || typeof item !== "object" || typeof item.pattern !== "string" || typeof item.meaning !== "string") { skipped += 1; return; }
-        const pattern = item.pattern.trim().replace(/\s+/g, " ");
-        const meaning = item.meaning.trim();
-        if (!pattern || !meaning) { skipped += 1; return; }
-        const key = normalizePhrase(pattern);
-        if (existing.has(key)) { skipped += 1; return; }
-        state.customCards.push({
-          id: newCardId(),
-          pattern,
-          meaning,
-          example: String(item.example || "").trim(),
-          exampleZh: String(item.exampleZh || "").trim(),
-          theme: String(item.theme || "").trim() || DEFAULT_THEME,
-          createdAt: new Date().toISOString()
+      if (isPdf) {
+        setImportStatus(`正在读取 ${name} 的高亮标注，文件较大时请稍等…`);
+        const buffer = new Uint8Array(await file.arrayBuffer());
+        const result = await window.RutaImport.parsePdf(buffer, draftTheme(), {
+          onProgress: (page, total) => {
+            if (page % 25 !== 0 && page !== total) return;
+            setImportStatus(`正在读取 ${name} 的高亮标注：第 ${page} / ${total} 页…`);
+          }
         });
-        existing.add(key);
-        added += 1;
-      });
-      if (!added) {
-        toast(`没有导入新搭配${skipped ? `（跳过 ${skipped} 个重复或无效项）` : ""}`, "error");
+        if (!result.items.length) {
+          setImportStatus(`${name}：${result.stats.boxes} 处标注里有 ${result.stats.empty} 处取不到文字，没有可用内容。请确认用的是高亮或下划线标注。`);
+          toast("这份 PDF 里没有可提取的高亮", "error");
+          return;
+        }
+        setImportStatus("");
+        prepareDraft(result.items, `${name}（${result.stats.boxes} 处标注）`);
         return;
       }
-      saveState();
-      buildCatalog();
-      renderThemeOptions();
-      renderLibrary();
-      renderDashboard();
-      toast(`导入完成：新增 ${added} 个${skipped ? `，跳过 ${skipped} 个` : ""}`, "success");
-    } catch {
-      toast("无法读取这个词库文件，支持 JSON / TXT / CSV", "error");
+      const raw = (await file.text()).replace(/^\uFEFF/, "");
+      const trimmed = raw.trim();
+      if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
+        importJsonVocabulary(trimmed);
+        return;
+      }
+      fromText(raw, name);
+    } catch (error) {
+      setImportStatus(`解析失败：${error && error.message ? error.message : "文件读不了"}`);
+      toast("解析失败，可以试试直接粘贴文本", "error");
     } finally {
       $("#importVocabulary").value = "";
     }
+  }
+
+  function parsePastedText() {
+    const text = $("#importPaste").value;
+    if (!text.trim()) { toast("先粘一些内容进来", "error"); return; }
+    fromText(text, "粘贴的内容");
+  }
+
+  function commitImportSelection() {
+    const chosen = importDraft.items.filter((item) => item.checked && !item.dup);
+    if (!chosen.length) return;
+    chosen.forEach(addCustomCard);
+    $("#importDialog").close();
+    importDraft = { source: "", items: [] };
+    $("#importPaste").value = "";
+    setImportStatus("");
+    refreshAfterImport(chosen.length);
+  }
+
+  function toggleAllImportRows() {
+    const rows = importDraft.items.filter((item) => draftVisible(item) && !item.dup);
+    const turnOn = rows.some((item) => !item.checked);
+    rows.forEach((item) => { item.checked = turnOn; });
+    renderImportList();
   }
 
   /* ---------- events ---------- */
@@ -1157,6 +1207,27 @@
     $("#exportVocabulary").addEventListener("click", exportVocabulary);
     $("#importVocabulary").addEventListener("change", (event) => { if (event.target.files[0]) importVocabulary(event.target.files[0]); });
     $("#downloadVocabTemplate").addEventListener("click", downloadVocabTemplate);
+    $("#parsePaste").addEventListener("click", parsePastedText);
+    $("#importToggleAll").addEventListener("click", toggleAllImportRows);
+    $("#importCancel").addEventListener("click", () => $("#importDialog").close());
+    $("#importConfirm").addEventListener("click", commitImportSelection);
+    $("#importOnlyB2").addEventListener("change", renderImportList);
+    $("#importShowDup").addEventListener("change", renderImportList);
+    $("#importList").addEventListener("change", (event) => {
+      const row = event.target.closest(".import-row");
+      if (!row) return;
+      const item = importDraft.items[Number(row.dataset.index)];
+      if (!item) return;
+      if (event.target.classList.contains("ir-meaning")) {
+        item.meaning = event.target.value.trim();
+        if (item.meaning && item.level === "b2") item.why = "";
+        updateImportFooter();
+      } else {
+        item.checked = event.target.checked;
+        row.classList.toggle("is-off", !item.checked);
+        updateImportFooter();
+      }
+    });
     $("#restoreVocabulary").addEventListener("click", restoreBuiltinVocabulary);
     $("#clearCustom").addEventListener("click", clearCustomCards);
     $("#resetProgress").addEventListener("click", async () => {

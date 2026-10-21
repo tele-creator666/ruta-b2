@@ -11,13 +11,6 @@ window.CARD_GROUPS = [
         "exampleZh": "该公司同意审查这些条款。"
       },
       {
-        "id": "d1c2",
-        "pattern": "acostumbrarse a",
-        "meaning": "习惯于……",
-        "example": "Me he acostumbrado a trabajar desde casa.",
-        "exampleZh": "我已经习惯了在家工作。"
-      },
-      {
         "id": "d1c3",
         "pattern": "adaptarse a",
         "meaning": "适应……",
@@ -30,13 +23,6 @@ window.CARD_GROUPS = [
         "meaning": "抢先；预先应对……",
         "example": "Debemos adelantarnos a los posibles problemas.",
         "exampleZh": "我们需要领先于潜在的问题。"
-      },
-      {
-        "id": "d1c5",
-        "pattern": "animarse a",
-        "meaning": "鼓起勇气做……",
-        "example": "Al final se animó a hablar en público.",
-        "exampleZh": "最后，他被鼓励在公共场合讲话。"
       },
       {
         "id": "d1c6",
@@ -65,13 +51,6 @@ window.CARD_GROUPS = [
         "meaning": "下决心做……",
         "example": "Por fin se decidió a solicitar la beca.",
         "exampleZh": "他终于决定申请奖学金。"
-      },
-      {
-        "id": "d1c10",
-        "pattern": "disponerse a",
-        "meaning": "准备开始做……",
-        "example": "Se disponía a salir cuando sonó el teléfono.",
-        "exampleZh": "他正要走，电话铃响了。"
       }
     ]
   },
@@ -79,20 +58,6 @@ window.CARD_GROUPS = [
     "day": 2,
     "theme": "Iniciar y comprometerse",
     "cards": [
-      {
-        "id": "d2c1",
-        "pattern": "aprender a",
-        "meaning": "学会做……",
-        "example": "Estoy aprendiendo a gestionar mejor mi tiempo.",
-        "exampleZh": "我正在学习如何更好地管理我的时间。"
-      },
-      {
-        "id": "d2c2",
-        "pattern": "comenzar a",
-        "meaning": "开始做……",
-        "example": "La situación comenzó a mejorar en primavera.",
-        "exampleZh": "情况在春天开始好转。"
-      },
       {
         "id": "d2c3",
         "pattern": "comprometerse a",
@@ -120,27 +85,6 @@ window.CARD_GROUPS = [
         "meaning": "突然开始做……",
         "example": "Al oír la noticia, se echó a llorar.",
         "exampleZh": "听到这个消息，她泪流满面。"
-      },
-      {
-        "id": "d2c7",
-        "pattern": "empezar a",
-        "meaning": "开始做……",
-        "example": "Empezaron a negociar la semana pasada.",
-        "exampleZh": "他们上周开始谈判。"
-      },
-      {
-        "id": "d2c8",
-        "pattern": "enseñar a",
-        "meaning": "教会……做……",
-        "example": "Mi abuelo me enseñó a conducir.",
-        "exampleZh": "我爷爷教我开车。"
-      },
-      {
-        "id": "d2c9",
-        "pattern": "invitar a",
-        "meaning": "邀请……做……",
-        "example": "Nos invitaron a participar en el proyecto.",
-        "exampleZh": "我们受邀参加了这个项目。"
       },
       {
         "id": "d2c10",
@@ -205,25 +149,11 @@ window.CARD_GROUPS = [
         "exampleZh": "当我紧张时，我倾向于说话很快。"
       },
       {
-        "id": "d3c8",
-        "pattern": "volver a",
-        "meaning": "再次做……",
-        "example": "Después de varios años, volvió a estudiar.",
-        "exampleZh": "几年后，他又回到了学校。"
-      },
-      {
         "id": "d3c9",
         "pattern": "llegar a",
         "meaning": "最终做到；达到……",
         "example": "Llegaron a un acuerdo tras horas de debate.",
         "exampleZh": "经过数小时的辩论，他们达成了协议。"
-      },
-      {
-        "id": "d3c10",
-        "pattern": "tardar en",
-        "meaning": "花费时间做……",
-        "example": "Tardaron meses en resolver el caso.",
-        "exampleZh": "解决此案花了数月时间。"
       }
     ]
   },
@@ -384,60 +314,11 @@ window.CARD_GROUPS = [
     "theme": "Comunicación y juicio",
     "cards": [
       {
-        "id": "d6c1",
-        "pattern": "hablar de",
-        "meaning": "谈论……",
-        "example": "Hablamos de los retos del proyecto.",
-        "exampleZh": "我们讨论了该项目的挑战。"
-      },
-      {
         "id": "d6c2",
         "pattern": "tratar de",
         "meaning": "试图做……",
         "example": "Trataré de explicarlo con claridad.",
         "exampleZh": "我会尽量解释清楚。"
-      },
-      {
-        "id": "d6c3",
-        "pattern": "informar de",
-        "meaning": "告知……",
-        "example": "La empresa informó de los cambios a sus empleados.",
-        "exampleZh": "该公司向其员工通报了这些变化。"
-      },
-      {
-        "id": "d6c4",
-        "pattern": "advertir de",
-        "meaning": "提醒；警告……",
-        "example": "Nos advirtieron del riesgo de inundación.",
-        "exampleZh": "我们被警告了洪水的风险。"
-      },
-      {
-        "id": "d6c5",
-        "pattern": "avisar de",
-        "meaning": "通知；提醒……",
-        "example": "Avísame de cualquier cambio.",
-        "exampleZh": "如有任何更改，请通知我。"
-      },
-      {
-        "id": "d6c6",
-        "pattern": "convencer de",
-        "meaning": "使……相信……",
-        "example": "Me convenció de que era la mejor opción.",
-        "exampleZh": "他说服了我，这是最好的选择。"
-      },
-      {
-        "id": "d6c7",
-        "pattern": "acusar de",
-        "meaning": "指控……",
-        "example": "Lo acusaron de ocultar información.",
-        "exampleZh": "他被指控隐瞒信息。"
-      },
-      {
-        "id": "d6c8",
-        "pattern": "culpar de",
-        "meaning": "把……归咎于……",
-        "example": "Culparon al conductor del accidente.",
-        "exampleZh": "他们将事故归咎于司机。"
       },
       {
         "id": "d6c9",
@@ -472,13 +353,6 @@ window.CARD_GROUPS = [
         "meaning": "在于；由……构成",
         "example": "El ejercicio consiste en resumir el texto.",
         "exampleZh": "练习是总结文本。"
-      },
-      {
-        "id": "d7c3",
-        "pattern": "creer en",
-        "meaning": "相信……",
-        "example": "Creo en la importancia de la educación pública.",
-        "exampleZh": "我相信公共教育的重要性。"
       },
       {
         "id": "d7c4",
@@ -562,13 +436,6 @@ window.CARD_GROUPS = [
         "meaning": "专门研究；专攻……",
         "example": "Se especializó en derecho internacional.",
         "exampleZh": "他专攻国际法。"
-      },
-      {
-        "id": "d8c5",
-        "pattern": "gastarse en",
-        "meaning": "把钱花在……上",
-        "example": "Se gastó todo el sueldo en un viaje.",
-        "exampleZh": "他把所有的薪水都花在了旅行上。"
       },
       {
         "id": "d8c6",
@@ -695,13 +562,6 @@ window.CARD_GROUPS = [
         "exampleZh": "这个术语经常与另一个类似的术语混淆。"
       },
       {
-        "id": "d10c2",
-        "pattern": "casarse con",
-        "meaning": "与……结婚",
-        "example": "Se casó con su pareja el año pasado.",
-        "exampleZh": "她去年嫁给了她的伴侣。"
-      },
-      {
         "id": "d10c3",
         "pattern": "chocar con",
         "meaning": "与……碰撞；与……冲突",
@@ -714,13 +574,6 @@ window.CARD_GROUPS = [
         "meaning": "与……同时；与……一致",
         "example": "Mi opinión coincide con la tuya.",
         "exampleZh": "我的意见与你的相符。"
-      },
-      {
-        "id": "d10c5",
-        "pattern": "convivir con",
-        "meaning": "与……共同生活；共存",
-        "example": "Tenemos que aprender a convivir con la incertidumbre.",
-        "exampleZh": "我们必须学会面对不确定性。"
       },
       {
         "id": "d10c6",
@@ -749,13 +602,6 @@ window.CARD_GROUPS = [
         "meaning": "留下；选择……",
         "example": "Me quedo con la segunda propuesta.",
         "exampleZh": "我会坚持第二个建议。"
-      },
-      {
-        "id": "d10c10",
-        "pattern": "llevarse con",
-        "meaning": "与……相处",
-        "example": "Se lleva muy bien con sus compañeros.",
-        "exampleZh": "他和同龄人相处得很好。"
       }
     ]
   },
@@ -825,13 +671,6 @@ window.CARD_GROUPS = [
         "meaning": "因……祝贺……",
         "example": "La felicitaron por su excelente trabajo.",
         "exampleZh": "他们祝贺她出色的工作。"
-      },
-      {
-        "id": "d11c10",
-        "pattern": "votar por",
-        "meaning": "投票支持……",
-        "example": "La mayoría votó por mantener el plan actual.",
-        "exampleZh": "大多数人投票赞成保留目前的计划。"
       }
     ]
   },
@@ -889,13 +728,6 @@ window.CARD_GROUPS = [
         "exampleZh": "委员会确保遵守规则。"
       },
       {
-        "id": "d12c8",
-        "pattern": "cambiar por",
-        "meaning": "用……换……",
-        "example": "Cambió su coche viejo por uno eléctrico.",
-        "exampleZh": "他把旧车换成了电动车。"
-      },
-      {
         "id": "d12c9",
         "pattern": "sustituir por",
         "meaning": "用……替代……",
@@ -937,13 +769,6 @@ window.CARD_GROUPS = [
         "exampleZh": "当局将采取行动打击欺诈行为。"
       },
       {
-        "id": "d13c4",
-        "pattern": "competir contra",
-        "meaning": "与……对抗比赛",
-        "example": "El equipo competirá contra el campeón.",
-        "exampleZh": "球队将与冠军竞争。"
-      },
-      {
         "id": "d13c5",
         "pattern": "rebelarse contra",
         "meaning": "反抗……",
@@ -958,25 +783,11 @@ window.CARD_GROUPS = [
         "exampleZh": "这项措施破坏了言论自由。"
       },
       {
-        "id": "d13c7",
-        "pattern": "chocar contra",
-        "meaning": "撞上……",
-        "example": "El coche chocó contra una barrera.",
-        "exampleZh": "这辆车撞上了障碍物。"
-      },
-      {
         "id": "d13c8",
         "pattern": "estrellarse contra",
         "meaning": "猛撞上……",
         "example": "El avión se estrelló contra la montaña.",
         "exampleZh": "飞机坠入山中。"
-      },
-      {
-        "id": "d13c9",
-        "pattern": "prevenir contra",
-        "meaning": "警告并防范……",
-        "example": "La campaña previene a los jóvenes contra el consumo de drogas.",
-        "exampleZh": "该运动警告年轻人不要吸毒。"
       },
       {
         "id": "d13c10",
@@ -1165,13 +976,6 @@ window.CARD_GROUPS = [
         "exampleZh": "大部分资金来自捐款。"
       },
       {
-        "id": "d16c4",
-        "pattern": "provenir de",
-        "meaning": "来自……",
-        "example": "El ruido proviene del piso de arriba.",
-        "exampleZh": "噪音来自楼上。"
-      },
-      {
         "id": "d16c5",
         "pattern": "resultar de",
         "meaning": "由……产生",
@@ -1191,13 +995,6 @@ window.CARD_GROUPS = [
         "meaning": "区别于……",
         "example": "Este modelo se distingue de los anteriores.",
         "exampleZh": "此型号与以前的型号不同。"
-      },
-      {
-        "id": "d16c8",
-        "pattern": "diferenciarse de",
-        "meaning": "与……不同",
-        "example": "La marca intenta diferenciarse de sus competidores.",
-        "exampleZh": "该品牌试图从竞争对手中脱颖而出。"
       },
       {
         "id": "d16c9",
@@ -1303,13 +1100,6 @@ window.CARD_GROUPS = [
         "exampleZh": "他们把旧工厂变成了博物馆。"
       },
       {
-        "id": "d18c2",
-        "pattern": "transformar algo en",
-        "meaning": "将……转化为……",
-        "example": "La experiencia transformó el miedo en confianza.",
-        "exampleZh": "这种经历将恐惧转化为自信。"
-      },
-      {
         "id": "d18c3",
         "pattern": "dividir algo en",
         "meaning": "把……分成……",
@@ -1322,13 +1112,6 @@ window.CARD_GROUPS = [
         "meaning": "把……分类为……",
         "example": "Los residuos se clasifican en varias categorías.",
         "exampleZh": "废物分为几类。"
-      },
-      {
-        "id": "d18c5",
-        "pattern": "organizar algo en",
-        "meaning": "把……组织成……",
-        "example": "Organizaron a los participantes en grupos.",
-        "exampleZh": "他们将参与者分成小组。"
       },
       {
         "id": "d18c6",
@@ -1455,34 +1238,6 @@ window.CARD_GROUPS = [
         "exampleZh": "老师鼓励我们发表意见。"
       },
       {
-        "id": "d20c2",
-        "pattern": "ayudar a alguien a",
-        "meaning": "帮助某人做……",
-        "example": "¿Puedes ayudarme a completar el formulario?",
-        "exampleZh": "您可以帮我填写表格吗？"
-      },
-      {
-        "id": "d20c3",
-        "pattern": "enseñar a alguien a",
-        "meaning": "教某人做……",
-        "example": "Le enseñaron a utilizar el programa.",
-        "exampleZh": "他被教导如何使用该程序。"
-      },
-      {
-        "id": "d20c4",
-        "pattern": "invitar a alguien a",
-        "meaning": "邀请某人做……",
-        "example": "Nos invitaron a asistir a la ceremonia.",
-        "exampleZh": "我们应邀参加了仪式。"
-      },
-      {
-        "id": "d20c5",
-        "pattern": "obligar a alguien a",
-        "meaning": "迫使某人做……",
-        "example": "La situación los obligó a tomar una decisión.",
-        "exampleZh": "这种情况迫使他们做出决定。"
-      },
-      {
         "id": "d20c6",
         "pattern": "incitar a alguien a",
         "meaning": "煽动；促使某人做……",
@@ -1509,13 +1264,6 @@ window.CARD_GROUPS = [
         "meaning": "强迫某人做……",
         "example": "La crisis forzó a muchas tiendas a cerrar.",
         "exampleZh": "这场危机迫使许多商店关闭。"
-      },
-      {
-        "id": "d20c10",
-        "pattern": "motivar a alguien a",
-        "meaning": "激励某人做……",
-        "example": "El resultado la motivó a seguir mejorando.",
-        "exampleZh": "结果激励她不断进步。"
       }
     ]
   },
@@ -1531,32 +1279,11 @@ window.CARD_GROUPS = [
         "exampleZh": "将此数据与去年进行比较。"
       },
       {
-        "id": "d21c2",
-        "pattern": "confundir algo con",
-        "meaning": "把某物误认为……",
-        "example": "No confundas sinceridad con falta de educación.",
-        "exampleZh": "不要将真诚与缺乏教育相混淆。"
-      },
-      {
         "id": "d21c3",
         "pattern": "relacionar algo con",
         "meaning": "把某物与……联系起来",
         "example": "Los expertos relacionan el estrés con el insomnio.",
         "exampleZh": "专家将压力与失眠联系起来。"
-      },
-      {
-        "id": "d21c4",
-        "pattern": "identificar algo con",
-        "meaning": "把某物等同于……",
-        "example": "No debemos identificar éxito con dinero.",
-        "exampleZh": "我们不应该把成功与金钱联系起来。"
-      },
-      {
-        "id": "d21c5",
-        "pattern": "combinar algo con",
-        "meaning": "把某物与……结合",
-        "example": "Combina la teoría con ejercicios prácticos.",
-        "exampleZh": "将理论与实践练习相结合。"
       },
       {
         "id": "d21c6",
@@ -1828,13 +1555,6 @@ window.CARD_GROUPS = [
     "theme": "Verbos avanzados",
     "cards": [
       {
-        "id": "d25c1",
-        "pattern": "abalanzarse sobre",
-        "meaning": "猛扑向……",
-        "example": "El perro se abalanzó sobre el desconocido.",
-        "exampleZh": "狗扑向陌生人。"
-      },
-      {
         "id": "d25c2",
         "pattern": "brindar por",
         "meaning": "为……举杯庆祝",
@@ -1882,13 +1602,6 @@ window.CARD_GROUPS = [
         "meaning": "与……断绝关系；打破……",
         "example": "La empresa quiere romper con métodos anticuados.",
         "exampleZh": "该公司希望打破过时的方法。"
-      },
-      {
-        "id": "d25c9",
-        "pattern": "desvivirse por",
-        "meaning": "为……竭尽全力",
-        "example": "Se desvive por ayudar a su familia.",
-        "exampleZh": "她竭尽全力帮助家人。"
       },
       {
         "id": "d25c10",
@@ -1939,13 +1652,6 @@ window.CARD_GROUPS = [
         "exampleZh": "多家公司正在争夺同一份合同。"
       },
       {
-        "id": "x6",
-        "pattern": "pensar en algo",
-        "meaning": "考虑；想着……",
-        "example": "Estoy pensando en cambiar de trabajo.",
-        "exampleZh": "我正在考虑换工作。"
-      },
-      {
         "id": "x7",
         "pattern": "ser diferente de",
         "meaning": "与……不同",
@@ -1958,13 +1664,6 @@ window.CARD_GROUPS = [
         "meaning": "离……很远；远非……",
         "example": "La negociación está lejos de terminar.",
         "exampleZh": "谈判远未结束。"
-      },
-      {
-        "id": "x9",
-        "pattern": "estar cerca de",
-        "meaning": "接近；快要……",
-        "example": "Estamos cerca de alcanzar un acuerdo.",
-        "exampleZh": "我们快要达成协议了。"
       },
       {
         "id": "x10",
@@ -2013,13 +1712,6 @@ window.CARD_GROUPS = [
         "meaning": "与……相同的……",
         "example": "Tengo la misma opinión que tú.",
         "exampleZh": "我和你持相同的看法。"
-      },
-      {
-        "id": "x16",
-        "pattern": "llegar a desarrollar",
-        "meaning": "最终发展出；甚至患上……",
-        "example": "El estrés continuo puede llegar a desarrollar problemas de sueño.",
-        "exampleZh": "持续的压力最终可能导致睡眠问题。"
       },
       {
         "id": "x17",
@@ -2181,13 +1873,6 @@ window.CARD_GROUPS = [
         "exampleZh": "改革为新的投资扫清了道路。"
       },
       {
-        "id": "x38",
-        "pattern": "la letra con sangre entra",
-        "meaning": "严厉管教才能学会（传统说法）",
-        "example": "Ya nadie acepta la idea de que la letra con sangre entra.",
-        "exampleZh": "如今已经没人认同严厉惩罚才能学会这一说法。"
-      },
-      {
         "id": "x39",
         "pattern": "punto de partida",
         "meaning": "出发点；起点",
@@ -2220,48 +1905,6 @@ window.CARD_GROUPS = [
         "meaning": "虽然……；尽管……",
         "example": "Si bien el plan es ambicioso, también es realista.",
         "exampleZh": "虽然这个计划很有雄心，但也很现实。"
-      },
-      {
-        "id": "x43",
-        "pattern": "¡y de qué manera!",
-        "meaning": "而且非常……；可不是嘛",
-        "example": "¿Ha cambiado la ciudad? ¡Y de qué manera!",
-        "exampleZh": "这座城市变了吗？可不是嘛，变化太大了！"
-      },
-      {
-        "id": "x44",
-        "pattern": "explicar algo a alguien",
-        "meaning": "向某人解释某事",
-        "example": "Le expliqué el problema al responsable.",
-        "exampleZh": "我向负责人解释了这个问题。"
-      },
-      {
-        "id": "x45",
-        "pattern": "decir algo a alguien",
-        "meaning": "告诉某人某事",
-        "example": "Todavía no le he dicho la verdad.",
-        "exampleZh": "我还没有告诉他真相。"
-      },
-      {
-        "id": "x46",
-        "pattern": "preguntar algo a alguien",
-        "meaning": "向某人询问某事",
-        "example": "Pregúntale al profesor la fecha del examen.",
-        "exampleZh": "去问老师考试日期。"
-      },
-      {
-        "id": "x47",
-        "pattern": "recomendar algo a alguien",
-        "meaning": "向某人推荐某物",
-        "example": "La médica me recomendó este tratamiento.",
-        "exampleZh": "医生向我推荐了这种治疗方案。"
-      },
-      {
-        "id": "x48",
-        "pattern": "pedir algo a alguien",
-        "meaning": "向某人请求某物",
-        "example": "Le pedí ayuda a una compañera.",
-        "exampleZh": "我向一位同事求助了。"
       },
       {
         "id": "x49",
@@ -2326,13 +1969,6 @@ window.CARD_GROUPS = [
         "exampleZh": "你的决定让我陷入了麻烦。"
       },
       {
-        "id": "x57",
-        "pattern": "estar en el quinto pino",
-        "meaning": "远得要命；在偏远地方",
-        "example": "El hotel está en el quinto pino.",
-        "exampleZh": "那家酒店远得要命。"
-      },
-      {
         "id": "x58",
         "pattern": "meter la pata",
         "meaning": "犯错；搞砸",
@@ -2345,13 +1981,6 @@ window.CARD_GROUPS = [
         "meaning": "使……接受；将……置于……之下",
         "example": "La propuesta será sometida a votación.",
         "exampleZh": "这项提案将提交表决。"
-      },
-      {
-        "id": "x60",
-        "pattern": "hacer lo que no está escrito",
-        "meaning": "竭尽全力；什么办法都用尽",
-        "example": "Hizo lo que no está escrito para ayudar a su hijo.",
-        "exampleZh": "为了帮助儿子，他什么办法都想尽了。"
       }
     ]
   },
@@ -2386,20 +2015,6 @@ window.CARD_GROUPS = [
         "meaning": "什么都做不好；一再出错",
         "example": "Hoy estoy cansado y no doy pie con bola.",
         "exampleZh": "我今天很累，做什么都不对劲。"
-      },
-      {
-        "id": "x65",
-        "pattern": "más que",
-        "meaning": "比……更多；超过……",
-        "example": "Ana trabaja más que yo.",
-        "exampleZh": "安娜工作得比我多。"
-      },
-      {
-        "id": "x66",
-        "pattern": "más de",
-        "meaning": "超过（某个数量）",
-        "example": "El proyecto tardó más de dos años.",
-        "exampleZh": "这个项目花了两年多时间。"
       },
       {
         "id": "x67",
@@ -2491,20 +2106,6 @@ window.CARD_GROUPS = [
     "theme": "文档扩展 · 连接与表达",
     "cards": [
       {
-        "id": "pdf-001",
-        "pattern": "tras",
-        "meaning": "在……之后（紧接着）",
-        "example": "Tras un largo viaje, llegamos al hotel.",
-        "exampleZh": "经过长途旅行后，我们抵达了酒店。"
-      },
-      {
-        "id": "pdf-002",
-        "pattern": "repentinamente",
-        "meaning": "突然地",
-        "example": "El perro apareció repentinamente.",
-        "exampleZh": "那只狗突然出现了。"
-      },
-      {
         "id": "pdf-003",
         "pattern": "dicho esto",
         "meaning": "话虽如此；说完这些后",
@@ -2554,13 +2155,6 @@ window.CARD_GROUPS = [
         "exampleZh": "即使下雨，我们也会去。"
       },
       {
-        "id": "pdf-010",
-        "pattern": "aunque",
-        "meaning": "尽管；即使",
-        "example": "Aunque llueve, saldré.",
-        "exampleZh": "尽管现在下雨，我还是会出门。"
-      },
-      {
         "id": "pdf-011",
         "pattern": "por mucho que",
         "meaning": "无论多么……",
@@ -2601,13 +2195,6 @@ window.CARD_GROUPS = [
         "meaning": "不过；话说回来",
         "example": "Iré contigo. Eso sí, no pienso conducir.",
         "exampleZh": "我会跟你去。不过，我可不打算开车。"
-      },
-      {
-        "id": "pdf-017",
-        "pattern": "no obstante",
-        "meaning": "然而；尽管如此",
-        "example": "Es caro; no obstante, lo compraré.",
-        "exampleZh": "虽然贵，不过我还是要买。"
       },
       {
         "id": "pdf-018",
@@ -2680,13 +2267,6 @@ window.CARD_GROUPS = [
         "exampleZh": "仅凭这个想法本身行不通。"
       },
       {
-        "id": "pdf-028",
-        "pattern": "en fin",
-        "meaning": "算了；总之",
-        "example": "En fin, no hablemos más del tema.",
-        "exampleZh": "算了，别再谈这个话题了。"
-      },
-      {
         "id": "pdf-029",
         "pattern": "de una vez por todas",
         "meaning": "一劳永逸；彻底地",
@@ -2713,13 +2293,6 @@ window.CARD_GROUPS = [
         "meaning": "突然间；毫无预兆地",
         "example": "Se enfadó conmigo de buenas a primeras.",
         "exampleZh": "他突然就生我的气了。"
-      },
-      {
-        "id": "pdf-033",
-        "pattern": "a lo mejor",
-        "meaning": "也许",
-        "example": "A lo mejor viene mañana.",
-        "exampleZh": "也许他明天来。"
       },
       {
         "id": "pdf-034",
@@ -2827,20 +2400,6 @@ window.CARD_GROUPS = [
         "exampleZh": "他几分钟内就修好了。"
       },
       {
-        "id": "pdf-049",
-        "pattern": "no ser sino",
-        "meaning": "不是别的，正是……",
-        "example": "Su éxito no es sino el resultado del esfuerzo.",
-        "exampleZh": "他的成功正是努力的结果。"
-      },
-      {
-        "id": "pdf-050",
-        "pattern": "a lo mucho",
-        "meaning": "最多；至多（拉美常用）",
-        "example": "El viaje durará dos horas a lo mucho.",
-        "exampleZh": "这趟行程最多两小时。"
-      },
-      {
         "id": "pdf-051",
         "pattern": "¿A qué se debe...?",
         "meaning": "是由于什么原因？",
@@ -2876,13 +2435,6 @@ window.CARD_GROUPS = [
         "exampleZh": "我主要是为你好才这么说。"
       },
       {
-        "id": "pdf-056",
-        "pattern": "nada más que",
-        "meaning": "仅仅；只有",
-        "example": "Quiero nada más que descansar.",
-        "exampleZh": "我只想休息。"
-      },
-      {
         "id": "pdf-057",
         "pattern": "no dejar de ser",
         "meaning": "仍然是；不失为",
@@ -2911,20 +2463,6 @@ window.CARD_GROUPS = [
         "exampleZh": "那种态度是娇惯孩子的典型表现。"
       },
       {
-        "id": "pdf-061",
-        "pattern": "una manera de hablar",
-        "meaning": "一种说法；随口一说",
-        "example": "No lo mataré, es solo una manera de hablar.",
-        "exampleZh": "我不会杀他，那只是随口一说。"
-      },
-      {
-        "id": "pdf-062",
-        "pattern": "meter un rollo",
-        "meaning": "长篇大论；讲废话",
-        "example": "El profesor nos metió un rollo de dos horas.",
-        "exampleZh": "老师给我们讲了两小时废话。"
-      },
-      {
         "id": "pdf-063",
         "pattern": "por poco",
         "meaning": "差一点就……",
@@ -2944,13 +2482,6 @@ window.CARD_GROUPS = [
         "meaning": "在……的重压之下",
         "example": "Se rindió bajo el peso de la responsabilidad.",
         "exampleZh": "在责任的重压下，他屈服了。"
-      },
-      {
-        "id": "pdf-066",
-        "pattern": "por mucho madrugar no amanece más temprano",
-        "meaning": "欲速则不达；起得再早天也不会早亮",
-        "example": "Ten paciencia: por mucho madrugar no amanece más temprano.",
-        "exampleZh": "耐心点：欲速则不达。"
       },
       {
         "id": "pdf-067",
@@ -2987,20 +2518,6 @@ window.CARD_GROUPS = [
         "exampleZh": "你可以出去，只要你把任务完成。"
       },
       {
-        "id": "pdf-071",
-        "pattern": "solo si",
-        "meaning": "只有当……",
-        "example": "Iremos a la playa solo si hace buen tiempo.",
-        "exampleZh": "只有天气好我们才去海滩。"
-      },
-      {
-        "id": "pdf-072",
-        "pattern": "como",
-        "meaning": "一旦；倘若",
-        "example": "Como llueva, no salimos.",
-        "exampleZh": "一旦下雨，我们就不出门。"
-      },
-      {
         "id": "pdf-073",
         "pattern": "a no ser que",
         "meaning": "除非……",
@@ -3020,13 +2537,6 @@ window.CARD_GROUPS = [
         "meaning": "除非……",
         "example": "Iremos al parque, salvo que llueva.",
         "exampleZh": "除非下雨，否则我们去公园。"
-      },
-      {
-        "id": "pdf-076",
-        "pattern": "salvo",
-        "meaning": "除了……",
-        "example": "Todos vinieron salvo Juan.",
-        "exampleZh": "除了胡安，大家都来了。"
       },
       {
         "id": "pdf-077",
@@ -3134,20 +2644,6 @@ window.CARD_GROUPS = [
         "exampleZh": "你觉得这部电影怎么样？"
       },
       {
-        "id": "pdf-092",
-        "pattern": "estar un ratito",
-        "meaning": "待一会儿",
-        "example": "Voy a tu casa a estar un ratito.",
-        "exampleZh": "我去你家待一会儿。"
-      },
-      {
-        "id": "pdf-093",
-        "pattern": "hacer rabiar a alguien",
-        "meaning": "惹恼某人；故意气人",
-        "example": "A mi hermano le encanta hacerme rabiar.",
-        "exampleZh": "我弟弟最喜欢惹我生气。"
-      },
-      {
         "id": "pdf-094",
         "pattern": "tener a cargo",
         "meaning": "由……负责；在……管辖下",
@@ -3155,46 +2651,11 @@ window.CARD_GROUPS = [
         "exampleZh": "我有五名员工归我管。"
       },
       {
-        "id": "pdf-095",
-        "pattern": "adoptar una imagen falsa",
-        "meaning": "塑造虚假形象",
-        "example": "En redes sociales muchos adoptan una imagen falsa.",
-        "exampleZh": "很多人在社交媒体上塑造虚假形象。"
-      },
-      {
-        "id": "pdf-096",
-        "pattern": "encontrarse",
-        "meaning": "处于某种状态；感到",
-        "example": "Me encuentro muy cansado hoy.",
-        "exampleZh": "我今天觉得很累。"
-      },
-      {
         "id": "pdf-097",
         "pattern": "asomarse a",
         "meaning": "探出头去；探身看",
         "example": "Se asomó a la ventana para mirar.",
         "exampleZh": "他把头探出窗外看。"
-      },
-      {
-        "id": "pdf-098",
-        "pattern": "dejar algo como nuevo",
-        "meaning": "把……弄得焕然一新",
-        "example": "Lavó el coche y lo dejó como nuevo.",
-        "exampleZh": "他把车洗得焕然一新。"
-      },
-      {
-        "id": "pdf-099",
-        "pattern": "ir cogido de la mano",
-        "meaning": "手拉手走",
-        "example": "Los novios iban cogidos de la mano.",
-        "exampleZh": "情侣手拉手走着。"
-      },
-      {
-        "id": "pdf-100",
-        "pattern": "tener un detalle",
-        "meaning": "贴心的举动；心意",
-        "example": "Gracias, has tenido un detalle conmigo.",
-        "exampleZh": "谢谢，你对我真贴心。"
       },
       {
         "id": "pdf-101",
@@ -3378,20 +2839,6 @@ window.CARD_GROUPS = [
         "exampleZh": "他是个普普通通的男孩。"
       },
       {
-        "id": "pdf-126",
-        "pattern": "no está mal visto",
-        "meaning": "不被看作是不好的",
-        "example": "En este país no está mal visto llegar tarde.",
-        "exampleZh": "在这个国家，迟到不会被看不起。"
-      },
-      {
-        "id": "pdf-127",
-        "pattern": "casi idéntico a",
-        "meaning": "几乎与……一模一样",
-        "example": "Tu coche es casi idéntico al mío.",
-        "exampleZh": "你的车和我的几乎一模一样。"
-      },
-      {
         "id": "pdf-128",
         "pattern": "tener algo a mano",
         "meaning": "某物在手边；方便拿",
@@ -3418,20 +2865,6 @@ window.CARD_GROUPS = [
         "meaning": "感到舒服；自在；满意",
         "example": "Me siento muy a gusto en esta casa.",
         "exampleZh": "我在这座房子里觉得很自在。"
-      },
-      {
-        "id": "pdf-132",
-        "pattern": "estar de buen humor",
-        "meaning": "心情好",
-        "example": "Hoy el jefe está de buen humor.",
-        "exampleZh": "老板今天心情很好。"
-      },
-      {
-        "id": "pdf-133",
-        "pattern": "estar de mal humor",
-        "meaning": "心情差",
-        "example": "Hoy el jefe está de mal humor.",
-        "exampleZh": "老板今天心情很差。"
       },
       {
         "id": "pdf-134",
@@ -3475,20 +2908,6 @@ window.CARD_GROUPS = [
     "theme": "文档扩展 · 地道熟语",
     "cards": [
       {
-        "id": "pdf-139",
-        "pattern": "no pinta nada bien",
-        "meaning": "情况不容乐观",
-        "example": "La economía no pinta nada bien.",
-        "exampleZh": "经济形势不容乐观。"
-      },
-      {
-        "id": "pdf-140",
-        "pattern": "ir tirando",
-        "meaning": "凑合着过；勉强维持",
-        "example": "—¿Cómo estás? —Bueno, tirando.",
-        "exampleZh": "——你怎么样？——还行，凑合着过。"
-      },
-      {
         "id": "pdf-141",
         "pattern": "dar el brazo a torcer",
         "meaning": "让步；认输；屈服",
@@ -3496,39 +2915,11 @@ window.CARD_GROUPS = [
         "exampleZh": "他很固执，从不认输。"
       },
       {
-        "id": "pdf-142",
-        "pattern": "no tener ni dos dedos de frente",
-        "meaning": "没脑子；不明事理",
-        "example": "No tiene ni dos dedos de frente.",
-        "exampleZh": "他一点脑子都没有。"
-      },
-      {
-        "id": "pdf-143",
-        "pattern": "estar en estado de revista",
-        "meaning": "极其整洁；一尘不染",
-        "example": "Tiene su cuarto en estado de revista.",
-        "exampleZh": "他的房间一尘不染。"
-      },
-      {
-        "id": "pdf-144",
-        "pattern": "estar por en medio",
-        "meaning": "挡路；碍事",
-        "example": "Quita la silla, que está por en medio.",
-        "exampleZh": "把椅子挪开，它挡路了。"
-      },
-      {
         "id": "pdf-145",
         "pattern": "arrimar el hombro",
         "meaning": "搭把手；并肩出力",
         "example": "Todos deben arrimar el hombro en esta crisis.",
         "exampleZh": "危机面前大家都应该搭把手。"
-      },
-      {
-        "id": "pdf-146",
-        "pattern": "soplar las brasas",
-        "meaning": "煽风点火；火上浇油",
-        "example": "Sus palabras solo sirvieron para soplar las brasas.",
-        "exampleZh": "他的话只是火上浇油。"
       },
       {
         "id": "pdf-147",
@@ -3559,46 +2950,11 @@ window.CARD_GROUPS = [
         "exampleZh": "他一直哭到得逞为止。"
       },
       {
-        "id": "pdf-151",
-        "pattern": "con su pan se la coma",
-        "meaning": "自食其果；随他去吧",
-        "example": "Si no quiere mi ayuda, con su pan se la coma.",
-        "exampleZh": "他要是不想要我帮忙，就随他去吧。"
-      },
-      {
-        "id": "pdf-152",
-        "pattern": "no me hinches las narices",
-        "meaning": "别惹我；别烦我",
-        "example": "Vete de aquí y no me hinches las narices.",
-        "exampleZh": "走开，别烦我。"
-      },
-      {
         "id": "pdf-153",
         "pattern": "qué le vamos a hacer",
         "meaning": "能怎么办呢；只能认了",
         "example": "Perdimos el tren, qué le vamos a hacer.",
         "exampleZh": "我们错过了火车，能怎么办呢。"
-      },
-      {
-        "id": "pdf-154",
-        "pattern": "me daba no sé qué",
-        "meaning": "让我心里发毛；不舒服",
-        "example": "Entrar en esa casa abandonada me daba no sé qué.",
-        "exampleZh": "走进那栋废弃的房子让我心里发毛。"
-      },
-      {
-        "id": "pdf-155",
-        "pattern": "erre que erre",
-        "meaning": "固执己见；死磕",
-        "example": "Sigue erre que erre con su idea.",
-        "exampleZh": "他还在固执地坚持自己的想法。"
-      },
-      {
-        "id": "pdf-156",
-        "pattern": "no estar para trotes",
-        "meaning": "经不起折腾",
-        "example": "Hoy me quedo en casa, no estoy para trotes.",
-        "exampleZh": "今天我要待在家里，经不起折腾了。"
       },
       {
         "id": "pdf-157",
@@ -3620,13 +2976,6 @@ window.CARD_GROUPS = [
         "meaning": "充耳不闻；当耳旁风",
         "example": "Hizo oídos sordos a mis advertencias.",
         "exampleZh": "他对我的警告充耳不闻。"
-      },
-      {
-        "id": "pdf-160",
-        "pattern": "tener el seso sorbido a alguien",
-        "meaning": "把……迷得神魂颠倒",
-        "example": "Esa secta le tiene el seso sorbido.",
-        "exampleZh": "那个教派把他迷得神魂颠倒。"
       }
     ]
   }

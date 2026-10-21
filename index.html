@@ -218,7 +218,7 @@
           <section class="settings-card wide-card">
             <div class="settings-head">
               <span class="settings-icon"><svg class="icon" aria-hidden="true"><use href="#i-book"></use></svg></span>
-              <div><h2>词库管理</h2><p class="muted">在「词库」页添加、编辑或删除搭配。支持 JSON、TXT、CSV 导入，以及 JSON 导出。</p></div>
+              <div><h2>词库管理</h2><p class="muted">在「词库」页添加、编辑或删除搭配。任何文本、表格或带高亮的 PDF 都能直接导入。</p></div>
             </div>
             <div class="vocab-stats">
               <div><strong id="vocabBuiltin">327</strong><span>内置搭配</span></div>
@@ -227,11 +227,20 @@
             </div>
             <div class="button-row">
               <button id="exportVocabulary" class="secondary-btn" type="button"><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>导出词库</button>
-              <label class="secondary-btn file-btn" title="支持 JSON / TXT / CSV"><svg class="icon" aria-hidden="true"><use href="#i-upload"></use></svg>导入词库<input id="importVocabulary" type="file" accept=".json,.txt,.csv,application/json,text/plain,text/csv"></label>
+              <label class="secondary-btn file-btn" title="TXT / CSV / Markdown 表格 / 带高亮的 PDF / JSON"><svg class="icon" aria-hidden="true"><use href="#i-upload"></use></svg>选择文件导入<input id="importVocabulary" type="file" accept=".json,.txt,.csv,.tsv,.md,.markdown,.pdf,application/json,text/plain,text/csv"></label>
               <button id="restoreVocabulary" class="secondary-btn" type="button"><svg class="icon" aria-hidden="true"><use href="#i-refresh"></use></svg>恢复内置词库</button>
               <button id="clearCustom" class="secondary-btn danger-text" type="button">清空自定义</button>
             </div>
-            <p class="import-hint">TXT / CSV 每行先写西语搭配，再写中文释义，用 <kbd>Tab</kbd>（推荐）或逗号分隔；后面可继续填写例句、例句翻译、主题。<button id="downloadVocabTemplate" class="link-btn" type="button">下载 TXT 模板</button></p>
+            <div class="import-box">
+              <textarea id="importPaste" class="import-paste" rows="5" placeholder="把任何东西粘到这里：排版很乱的笔记、从 Excel 或在线表格整块复制的内容、PDF 里选中的一段话。点「解析」自动挑出西语固定搭配。"></textarea>
+              <div class="import-tools">
+                <label class="import-theme-label">归入主题<input id="importTheme" class="import-theme" type="text" value="我的搭配" spellcheck="false"></label>
+                <button id="parsePaste" class="primary-btn" type="button">解析文本</button>
+                <button id="downloadVocabTemplate" class="link-btn" type="button">下载 TXT 模板</button>
+              </div>
+              <p id="importStatus" class="muted import-status" hidden></p>
+              <p class="import-hint">自动识别 Tab、逗号、分号和 Markdown 表格；没有格式的笔记也能按「西语＋中文」的行结构拆开。带高亮的 PDF 直接选文件，只取你标注的部分。单个词、入门搭配和整句会被标出来并默认不勾选。</p>
+            </div>
           </section>
 
           <section class="settings-card">
@@ -358,8 +367,27 @@
     </div>
   </dialog>
 
+  <dialog id="importDialog" class="import-dialog">
+    <div class="import-head">
+      <h3 id="importTitle">导入预览</h3>
+      <p class="muted" id="importSummary"></p>
+    </div>
+    <div class="import-filters">
+      <label class="check-line"><input type="checkbox" id="importOnlyB2" checked>只保留常见 B2 词组（隐藏单个词、入门搭配和整句）</label>
+      <label class="check-line"><input type="checkbox" id="importShowDup">显示词库里已经有的</label>
+    </div>
+    <div class="import-list" id="importList"></div>
+    <div class="confirm-actions import-actions">
+      <button id="importToggleAll" class="secondary-btn" type="button">全选 / 全不选</button>
+      <button id="importCancel" class="secondary-btn" type="button">取消</button>
+      <button id="importConfirm" class="primary-btn" type="button">导入 0 条</button>
+    </div>
+  </dialog>
+
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script src="./data.js"></script>
+  <script src="./level-lists.js"></script>
+  <script src="./importer.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>

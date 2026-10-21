@@ -1393,3 +1393,76 @@ dialog::backdrop {
 .import-hint b { color: var(--ink); font-weight: 700; }
 .import-hint kbd { margin: 0 2px; }
 .import-hint .link-btn { margin-left: 3px; font-size: 10.5px; }
+
+/* 导入：粘贴区与预览确认清单 */
+.import-box { margin-top: 14px; display: grid; gap: 10px; }
+.import-paste {
+  width: 100%;
+  min-height: 96px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  font: 13px/1.6 var(--sans);
+  resize: vertical;
+}
+.import-paste:focus-visible { outline: 2px solid var(--wine-soft); outline-offset: 1px; }
+.import-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.import-theme-label { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 12.5px; }
+.import-theme {
+  width: 132px;
+  padding: 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+  color: var(--ink);
+  font: inherit;
+}
+.import-status { margin: 0; font-size: 12.5px; }
+.import-dialog {
+  width: min(720px, 92vw);
+  max-height: 82vh;
+  padding: 0;
+  border: none;
+  border-radius: 16px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: var(--shadow-lg);
+}
+.import-dialog::backdrop { background: rgba(37, 24, 30, .42); }
+.import-head { padding: 18px 20px 8px; }
+.import-head h3 { margin: 0 0 4px; font: 700 17px/1.3 var(--serif); }
+.import-filters { display: grid; gap: 6px; padding: 4px 20px 12px; border-bottom: 1px solid var(--line); }
+.check-line { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 12.5px; }
+.import-list { max-height: 42vh; overflow: auto; padding: 4px 20px; }
+.import-row {
+  display: grid;
+  grid-template-columns: 18px minmax(110px, 1.1fr) minmax(110px, 1.2fr) 68px;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.import-row.is-off { opacity: .55; }
+.import-row .ir-pattern { font: 600 13px/1.4 var(--sans); word-break: break-word; }
+.import-row .ir-meaning {
+  width: 100%;
+  padding: 5px 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--cream);
+  color: var(--ink);
+  font: 12.5px/1.4 var(--sans);
+}
+.ir-tag { font-size: 11px; padding: 2px 7px; border-radius: 999px; text-align: center; white-space: nowrap; }
+.ir-tag.b2 { background: var(--green-soft); color: var(--green); }
+.ir-tag.easy { background: var(--amber); color: var(--amber-ink); }
+.ir-tag.odd, .ir-tag.word { background: var(--red); color: var(--red-ink); }
+.ir-tag.long, .ir-tag.dup { background: var(--cream-deep); color: var(--muted-2); }
+.import-actions { padding: 12px 20px 16px; border-top: 1px solid var(--line); }
+.import-actions .confirm-actions, .confirm-actions.import-actions { margin-top: 0; }
+@media (max-width: 560px) {
+  .import-row { grid-template-columns: 18px 1fr 62px; }
+  .import-row .ir-meaning { grid-column: 2 / 4; }
+}
